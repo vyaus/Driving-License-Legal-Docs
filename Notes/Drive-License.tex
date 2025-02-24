@@ -1,0 +1,52 @@
+\documentclass[b5paper]{ctexbook}
+\usepackage{xcolor}    % 提供颜色支持
+\usepackage{colortbl}  % 提供表格背景色支持
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{ulem}
+\usepackage[colorlinks=true, linkcolor=red, urlcolor=gray]{hyperref}
+\usepackage{cleveref}
+\titleformat*{\section}{\bfseries\Large\raggedright}
+
+\newcommand{\docname}{驾考科目一笔记}
+\newcommand{\companyname}{\href{https://github.com/vyaus}{vyaus}}
+
+\pagestyle{fancy}
+%\fancyhf{} % 清除所有默认的页眉和页脚
+\fancyfoot{} % 清除默认的页脚
+\fancyfoot[RO, LE]{\thepage} % 奇数页左侧，偶数页右侧
+\fancyfoot[LO]{\docname} % 文档名称
+\fancyfoot[RE]{\companyname} % 文档名称
+
+\geometry{margin=2cm}
+\title{\docname}
+\author{\companyname}
+%\titlepic{\includegraphics[width=0.8\textwidth]{sections/images/cover.png}}
+\date{\today}
+\ctexset{
+    today = big
+}
+\let\cleardoublepage\clearpage % 清除章节末尾的空白页
+\begin{document}
+    \maketitle
+
+    \tableofcontents
+    \fangsong
+    \chapter{扣分项}
+    \input{chapters/deduct_point.tex}
+
+    \chapter{罚款项}
+    \input{chapters/penalty_provisions.tex}
+
+    \appendix
+    
+    \chapter{准驾车型及代号与年龄限制}
+    \input{chapters/appendix_1.tex}
+
+    \chapter{容易混淆的扣分、罚款项}
+    \input{chapters/appendix_2.tex}
+\end{document}
